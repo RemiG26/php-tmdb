@@ -29,7 +29,7 @@
         "tvdb"
     ],
     "license": "MIT",
-    "name": "php-tmdb/api",
+    "name": "remig26/php-tmdb",
     "require": {
         "php": "^7.3 || ^8.0",
         "ext-json": "*",
