@@ -194,9 +194,10 @@ abstract class AbstractApi implements ApiInterface
      */
     private function decodeResponse(ResponseInterface $response)
     {
+        $body = $response->getBody();
         try {
-            if ($response->getBody() instanceof StreamInterface) {
-                return json_decode((string)$response->getBody(), true, 512, JSON_THROW_ON_ERROR);
+            if ($body instanceof StreamInterface && (string) $body !== "") {
+                return json_decode((string) $body, true, 512, JSON_THROW_ON_ERROR);
             }
 
             return [];
